@@ -3,11 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-const myelement = ("Hello")
+
+function Car(props) {
+    return <h2>Hi, i'm a { props.brand.name } { props.brand.model }!</h2>
+}
+
+function Garage() {
+    const carInfo = { name:"Ford", model:"Mustang"}
+    return (
+        <>
+        <h1>Who lives in my garage?</h1>
+        <Car brand={ carInfo } />
+        </>
+    );
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(myelement);
+root.render(<Garage />);
 
 
 // If you want to start measuring performance in your app, pass a function
